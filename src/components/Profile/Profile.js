@@ -40,8 +40,8 @@ export default function Profile() {
 
     return (
         <Container>
-            <div class="container-fluid bg-light text-dark p-5">
-                <div class="container bg-light p-5">
+            <div class="container-fluid bg-dark text-white rounded p-5">
+                <div class="container bg-dark p-5">
                     <Row>
                         <Col sm="10" className="text-left">
                             <h3>
@@ -56,6 +56,7 @@ export default function Profile() {
                     </Row>
                 </div>
             </div>
+            <br />
             <p>
                 <strong>{t("email")}:</strong> {profile.email}
             </p>

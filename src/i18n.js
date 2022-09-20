@@ -61,7 +61,7 @@ i18n.use(LanguageDetector).init({
                 actions: "Дії",
                 listEmpty: "Список пустий",
                 signUp: "Зареєструватись",
-                LogOut: "Вийти",
+                logOut: "Вийти",
                 login: "Ввійти",
                 role: "Роль",
                 createBackup: "Створити резервну копію",
