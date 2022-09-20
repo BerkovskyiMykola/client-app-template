@@ -1,1 +1,1 @@
-export const API_URL = "";
+export const CURRENT_DOMAIN = "";
