@@ -16,6 +16,7 @@ import {
 export default function Profile() {
     const { t } = useTranslation();
     const dispatch = useDispatch();
+    const [rendered, setRendered] = useState(false);
 
     const [modalEdit, setModalEdit] = useState(false);
     const [model, setModel] = useState({ lastname: "", firstname: "" });
@@ -26,8 +27,14 @@ export default function Profile() {
     }), shallowEqual)
 
     useEffect(() => {
-        dispatch(getProfile())
-    }, [dispatch])
+        if(rendered){
+            dispatch(getProfile());
+        }
+        
+        if(!rendered) {
+            setRendered(true);
+        }
+    }, [dispatch, rendered])
 
     const editRecord = () => {
         dispatch(editProfile(model.lastname, model.firstname, t))

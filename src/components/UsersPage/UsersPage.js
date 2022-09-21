@@ -15,6 +15,7 @@ const UsersPage = () => {
     const [modalEdit, setModalEdit] = useState(false);
     const [model, setModel] = useState({ id: "", firstname: "", lastname: "", email: "", password: "", role: "" });
     const [validate, setValidate] = useState({ email: '' });
+    const [rendered, setRendered] = useState(false);
 
     const [roles] = useState([
         { id: 0, name: "User" },
@@ -27,8 +28,14 @@ const UsersPage = () => {
     }), shallowEqual)
 
     useEffect(() => {
-        dispatch(getUsers(t));
-    }, [dispatch, t])
+        if(rendered){
+            dispatch(getUsers(t))
+        }
+        
+        if(!rendered) {
+            setRendered(true);
+        }
+    }, [dispatch, t, rendered])
 
     const getRole = (role) => {
         switch (role) {

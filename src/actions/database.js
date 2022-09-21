@@ -11,14 +11,14 @@ export const getBackups = (t) => (dispatch) => {
                 payload: { backups: responce.data }
             });
 
-            toast.success(t("LoadSuccess"));
+            toast.success(t("loadSuccess"));
         },
         (error) => {
             if (error.response && error.response.status === 401) {
                 EventBus.dispatch("logout");
             }
             else {
-                toast.error(t("Error"));
+                toast.error(t("error"));
             }
         }
     )
