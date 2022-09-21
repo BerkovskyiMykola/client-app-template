@@ -13,7 +13,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-  <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
         <I18nextProvider i18n={i18n}>
@@ -21,7 +20,6 @@ root.render(
         </I18nextProvider>
       </Provider>
     </BrowserRouter>
-  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

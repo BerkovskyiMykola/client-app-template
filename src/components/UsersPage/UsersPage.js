@@ -7,10 +7,12 @@ import ModalWindow from '../ModalWindow/ModalWindow';
 import { clearMessage } from '../../actions/message';
 import { EmailInput, FieldInput, PasswordInput, SelectInput } from '../FormComponents';
 import { FormGroup, Label } from 'reactstrap';
+import { useNavigate } from 'react-router-dom';
 
 const UsersPage = () => {
     const { t } = useTranslation();
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [modalAdd, setModalAdd] = useState(false);
     const [modalEdit, setModalEdit] = useState(false);
     const [model, setModel] = useState({ id: "", firstname: "", lastname: "", email: "", password: "", role: "" });
