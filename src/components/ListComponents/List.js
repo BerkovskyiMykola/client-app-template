@@ -12,8 +12,8 @@ const List = ({ name, records, columns, k, createRecord, refreshRecords, action 
         <>
             <Container>
                 <Row>
-                    <Col className="text-left"><h3>{t(name)}</h3></Col>
-                    <Col className="text-right">
+                    <Col><h3>{t(name)}</h3></Col>
+                    <Col className="text-end">
                         {createRecord && <Button onClick={() => createRecord()} color="success">{t("create")}</Button>}
                         {refreshRecords && 
                             <Button style={{ marginLeft: "3px" }} onClick={() => refreshRecords()}>
@@ -38,7 +38,7 @@ const List = ({ name, records, columns, k, createRecord, refreshRecords, action 
                                 {columns.map((x, index) =>
                                     <th key={index}>{t(x)}</th>
                                 )}
-                                {action && <th>{t("Actions")}</th>}
+                                {action && <th>{t("actions")}</th>}
                             </tr>
                         </thead>
                         <tbody>

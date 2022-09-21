@@ -6,9 +6,11 @@ import { Route } from 'react-router-dom';
 import { PrivateRoute } from './PrivateRoute';
 import Login from './components/Login';
 import Profile from './components/Profile';
+import Register from './components/Register/Register';
+import Database from './components/Datebase/Database';
+import UsersPage from './components/UsersPage/UsersPage';
 
 import './App.css'
-import Register from './components/Register/Register';
 
 const App = () => {
     return (
@@ -22,6 +24,22 @@ const App = () => {
           element={
             <PrivateRoute>
               <Profile />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/database"
+          element={
+            <PrivateRoute roles={["Admin"]}>
+              <Database />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/users"
+          element={
+            <PrivateRoute roles={["Admin"]}>
+              <UsersPage />
             </PrivateRoute>
           }
         />

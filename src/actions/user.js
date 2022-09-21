@@ -12,7 +12,7 @@ export const getUsers = (t) => (dispatch) => {
                 payload: { users: responce.data }
             });
 
-            toast.success(t("LoadSuccess"));
+            toast.success(t("loadSuccess"));
         },
         (error) => {
             if (error.response && error.response.status === 401) {
@@ -33,7 +33,7 @@ export const createUser = (lastname, firstname, role, email, password, t) => (di
                 payload: { user: responce.data }
             });
 
-            toast.success(t("CreateSuccess"));
+            toast.success(t("createSuccess"));
 
             return Promise.resolve();
         },
@@ -66,14 +66,14 @@ export const deleteUser = (id, t) => (dispatch) => {
                 payload: { id }
             });
 
-            toast.success(t("DeleteSuccess"));
+            toast.success(t("deleteSuccess"));
         },
         (error) => {
             if (error.response && error.response.status === 401) {
                 EventBus.dispatch("logout");
             }
             else {
-                toast.error(t("Error"));
+                toast.error(t("error"));
             }
 
             dispatch({
@@ -91,7 +91,7 @@ export const editUser = (userId, lastname, firstname, role, t) => (dispatch) => 
                 payload: { userId, lastname, firstname, role }
             });
 
-            toast.success(t("EditSuccess"));
+            toast.success(t("editSuccess"));
 
             return Promise.resolve();
         },

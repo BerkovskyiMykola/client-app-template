@@ -12,7 +12,7 @@ export const getProfile = () => (dispatch) => {
                 type: GET_PROFILE_INFO_SUCCESS,
                 payload: responce.data
             });
-
+            
             return Promise.resolve();
         },
         (error) => {
@@ -39,7 +39,7 @@ export const editProfile = (lastname, firstname, t) => (dispatch) => {
                 payload: { lastname, firstname }
             });
 
-            toast.success(t("EditSuccess"));
+            toast.success(t("editSuccess"));
 
             return Promise.resolve();
         },
@@ -48,7 +48,7 @@ export const editProfile = (lastname, firstname, t) => (dispatch) => {
                 EventBus.dispatch("logout");
             }
             else {
-                toast.error(t("Error"));
+                toast.error(t("error"));
             }
 
             dispatch({

@@ -31,14 +31,14 @@ export const restore = (backupName, t) => (dispatch) => {
                 type: RESTORE_SUCCESS
             });
 
-            toast.success(t("RestorSuccess"));
+            toast.success(t("restorSuccess"));
         },
         (error) => {
             if (error.response && error.response.status === 401) {
                 EventBus.dispatch("logout");
             }
             else {
-                toast.error(t("Error"));
+                toast.error(t("error"));
             }
 
             dispatch({
@@ -56,14 +56,14 @@ export const createBackup = (t) => (dispatch) => {
                 payload: { backupName: responce.data }
             });
 
-            toast.success(t("CreateSuccess"));
+            toast.success(t("createSuccess"));
         },
         (error) => {
             if (error.response && error.response.status === 401) {
                 EventBus.dispatch("logout");
             }
             else {
-                toast.error(t("Error"));
+                toast.error(t("error"));
             }
 
             dispatch({
@@ -81,14 +81,14 @@ export const deleteBackup = (backupName, t) => (dispatch) => {
                 payload: { backupName }
             });
 
-            toast.success(t("DeleteSuccess"));
+            toast.success(t("deleteSuccess"));
         },
         (error) => {
             if (error.response && error.response.status === 401) {
                 EventBus.dispatch("logout");
             }
             else {
-                toast.error(t("Error"));
+                toast.error(t("error"));
             }
 
             dispatch({
